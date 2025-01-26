@@ -1,0 +1,84 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1shtctl0w7g1"]
+
+[sub_resource type="GDScript" id="GDScript_o45xl"]
+resource_name = "sectionSelect"
+script/source = "extends Control
+
+@onready var player_triangle = $PlayerTriangle
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_section_1_pressed():
+	get_tree().change_scene_to_file(\"res://Scenes/world.tscn\")
+	print(player_triangle.position)
+"
+
+[node name="sectionSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_o45xl")
+
+[node name="Section1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 181.0
+offset_right = 274.0
+offset_bottom = 245.0
+text = "Section1"
+
+[node name="Section2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 378.0
+offset_top = 180.0
+offset_right = 530.0
+offset_bottom = 244.0
+text = "section 2 
+"
+
+[node name="Section3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 627.0
+offset_top = 180.0
+offset_right = 779.0
+offset_bottom = 244.0
+
+[node name="Section4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 325.0
+offset_right = 288.0
+offset_bottom = 389.0
+
+[node name="Section5" type="Button" parent="."]
+layout_mode = 0
+offset_left = 391.0
+offset_top = 331.0
+offset_right = 543.0
+offset_bottom = 395.0
+
+[node name="Section6" type="Button" parent="."]
+layout_mode = 0
+offset_left = 623.0
+offset_top = 332.0
+offset_right = 775.0
+offset_bottom = 396.0
+
+[node name="Section7" type="Button" parent="."]
+layout_mode = 0
+offset_left = 356.0
+offset_top = 462.0
+offset_right = 508.0
+offset_bottom = 526.0
+
+[connection signal="pressed" from="Section1" to="." method="_on_section_1_pressed"]

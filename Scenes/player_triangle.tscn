@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0guemm4dcdms"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_id26a"]
+[ext_resource type="Texture2D" uid="uid://dd7wvcx843en8" path="res://Sprites/1152px-Black_triangle_with_thick_white_border.svg.png" id="2_3k44e"]
+[ext_resource type="Script" path="res://Scripts/Line2D.gd" id="3_gd82v"]
+
+[node name="PlayerTriangle" type="RigidBody2D" groups=["player"]]
+script = ExtResource("1_id26a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.100002, -3.2)
+scale = Vector2(0.0487847, 0.0472656)
+texture = ExtResource("2_3k44e")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.3, 0.3)
+polygon = PackedVector2Array(0, -83.3333, 90, 66.6667, -90, 66.6667)
+
+[node name="Line2D" type="Line2D" parent="."]
+width = 5.0
+script = ExtResource("3_gd82v")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_right = 0
+limit_bottom = 2925
+position_smoothing_enabled = true
+position_smoothing_speed = 3.5

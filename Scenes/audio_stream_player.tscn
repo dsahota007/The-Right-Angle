@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://fef7t2k8lmad"]
+
+[ext_resource type="AudioStream" uid="uid://xirx3gyknaiq" path="res://Sprites/loading.wav" id="1_s662h"]
+[ext_resource type="Script" path="res://Scripts/audio_stream_player.gd" id="2_rrp1t"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_s662h")
+volume_db = 0.295
+pitch_scale = 1.12
+autoplay = true
+script = ExtResource("2_rrp1t")
+
+[connection signal="finished" from="." to="." method="_ready"]

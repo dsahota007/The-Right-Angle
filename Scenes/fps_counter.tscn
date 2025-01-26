@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://drl0xcgmoaaae"]
+
+[ext_resource type="Script" path="res://Scripts/fpsCounter.gd" id="1_i1g7k"]
+
+[node name="fpsCounter" type="ColorRect"]
+offset_left = -1110.0
+offset_top = 2784.0
+offset_right = -882.0
+offset_bottom = 2824.0
+color = Color(1, 1, 1, 0)
+script = ExtResource("1_i1g7k")
+
+[node name="FPS_COUNTER" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "100"

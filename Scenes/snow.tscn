@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnfvlx40syb1"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_f1emv"]
+particle_flag_align_y = true
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1500, 1, 1)
+direction = Vector3(-1, 1, 0)
+spread = 4.966
+initial_velocity_min = 568.61
+initial_velocity_max = 568.61
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="GDScript" id="GDScript_kcbwh"]
+script/source = "extends GPUParticles2D
+
+func _process(delta):
+
+	# This ensures the node itself doesn't rotate with the parent.
+	rotation_degrees = -get_parent().rotation_degrees
+	#position.y -= 300
+	### Counteract the parent's scale flip.
+	#scale.x = 1 / get_parent().scale.x
+	#scale.y = 1 / get_parent().scale.y
+"
+
+[node name="snow" type="GPUParticles2D"]
+position = Vector2(704, 23)
+amount = 1000
+process_material = SubResource("ParticleProcessMaterial_f1emv")
+lifetime = 5.0
+fixed_fps = 40
+script = SubResource("GDScript_kcbwh")
